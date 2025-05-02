@@ -5,13 +5,18 @@ import { error } from "@sveltejs/kit";
 import { eq } from "drizzle-orm";
 import { zfd } from "zod-form-data";
 
-export const load = async ({locals}) => {
-    const userProfile = await getOrCreateUserProfile(locals);
+export const load = async ({ locals }) => {
+	try {
+		const userProfile = await getOrCreateUserProfile(locals);
 
-    return {
-        userProfile,
-    };
-}
+		return {
+			userProfile,
+		};
+	} catch (err) {
+		console.error('❌ Error in load:', err);
+		throw error(500, "Internal Server Error (profile)");
+	}
+};
 
 export const actions = {
     default: async ({ request, locals }) => {
