@@ -18,8 +18,9 @@ export const actions = {
         const userProfile = await getOrCreateUserProfile(locals);
 
         if (!userProfile) {
-           error(401, "User not authenticated");
-        }
+            throw error(401, "User not authenticated");
+         }
+         
     const schema = zfd.formData({
         firstName: zfd.text(),
         lastName: zfd.text(),
@@ -29,8 +30,9 @@ export const actions = {
     const { data } = schema.safeParse(await request.formData());
 
     if (!data) {
-        error(400, "Invalid form data");
+        throw error(400, "Invalid form data");
     }
+    
 
     await db.update(profileTable).set({
         firstName: data.firstName,
