@@ -6,6 +6,7 @@ import { eq } from "drizzle-orm";
 export const getOrCreateUserProfile = async (locals: App.Locals) => {
     const { user } = await locals.safeGetSession();
     if(!user) {
+        console.log('No user found in session.');
         return null;
     }
     const curProfile = await db.query.profileTable.findFirst({
@@ -13,9 +14,10 @@ export const getOrCreateUserProfile = async (locals: App.Locals) => {
     })
 
     if(curProfile) {
+        console.log('Profile found:', curProfile);
         return curProfile;
     }
-
+    console.log('Creating new profile...');
     await db.insert(profileTable).values({
         id: user.id,
         firstName: "",
