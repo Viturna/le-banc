@@ -1,22 +1,26 @@
+<script>
+	import Input from '$lib/components/Input.svelte';
+</script>
+
 <section class="hero">
 	<div class="container">
 		<div class="hero-content">
-			<h1>S'inscrire.</h1>
-			<p>bienvenue sur <span class="bold italic">le banc</span>, une plateforme utile.</p>
+			<h1>M’inscrire</h1>
 			<form method="POST" action="?/login">
-				<label>
-					<label for="email">Email</label>
-					<input name="email" type="email" />
-				</label>
-				<div style="display: flex; flex-direction: column; gap: 8px;">
-					Password
-					<input name="password" type="password" />
-				</div>
+				<Input name="email" label="Email" type="email" placeholder="Adresse email" required />
 
-				<button formaction="?/signup">Sign up</button>
-				<a href="/auth/register/github">S'inscrire avec github</a>
-				<a href="/auth/register/google">S'inscrire avec google</a>
+				<Input
+					name="password"
+					label="Mot de passe"
+					type="password"
+					placeholder="Mot de passe"
+					required
+				/>
+
+				<button formaction="?/signup">m'inscrire</button>
 			</form>
+			<a href="/auth/register/github">S'inscrire avec github</a>
+			<a href="/auth/register/google">S'inscrire avec google</a>
 			<a href="/auth/login">Se connecter</a>
 		</div>
 		<div class="hero-image">
@@ -35,11 +39,16 @@
 	}
 	.hero-content {
 		margin-top: 124px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 	.hero-content form {
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+		margin-top: 70px;
 	}
 	.hero-image {
 		align-self: center;

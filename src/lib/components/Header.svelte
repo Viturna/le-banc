@@ -45,6 +45,7 @@
 		align-items: center;
 		justify-content: space-between;
 		border-radius: 35px;
+		padding: 2px 0;
 		padding-right: 16px;
 	}
 	nav {
@@ -54,7 +55,7 @@
 	nav ul {
 		list-style-type: none;
 		display: flex;
-		gap: 4vw;
+		gap: 3.5vw;
 	}
 
 	.nav-link {

@@ -12,7 +12,6 @@
 		text-decoration: none;
 		border-style: solid;
 		border-width: 1px 3px 3px 1px;
-		border-radius: 100px;
 		padding: 6px 12px;
 		cursor: pointer;
 		font-size: 18px;

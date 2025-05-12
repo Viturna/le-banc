@@ -47,6 +47,9 @@
 </section>
 
 <style>
+	h1 {
+		font-size: 4rem;
+	}
 	.hero {
 		min-height: 600px;
 	}

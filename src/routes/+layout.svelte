@@ -2,6 +2,7 @@
 	import '../app.css';
 	import { goto, invalidate } from '$app/navigation';
 	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 	const { data: propsData, children } = $props();
 	const { supabase, session } = propsData;
 
@@ -22,5 +23,6 @@
 		<main>
 			{@render children()}
 		</main>
+		<Footer />
 	</div>
 </div>
