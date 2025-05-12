@@ -4,35 +4,52 @@ import { error } from "@sveltejs/kit";
 import { eq } from "drizzle-orm";
 
 export const getOrCreateUserProfile = async (locals: App.Locals) => {
-    const { user } = await locals.safeGetSession();
-    if(!user) {
-        console.log('No user found in session.');
-        return null;
-    }
-    const curProfile = await db.query.profileTable.findFirst({
-        where: eq(profileTable.id, user.id), 
-    })
+  const { user } = await locals.safeGetSession();
 
-    if(curProfile) {
-        console.log('Profile found:', curProfile);
-        return curProfile;
-    }
-    console.log('Creating new profile...');
-    await db.insert(profileTable).values({
-        id: user.id,
-        firstName: "",
-        lastName: "",
-        email: user.email ?? "",
-    });
+  if (!user) {
+    throw error(401, "Not authenticated");
+  }
 
-    const newProfile = await db.query.profileTable.findFirst({
-        where: eq(profileTable.id, user.id), 
-    });
+  const curProfile = await db.query.profileTable.findFirst({
+    where: eq(profileTable.id, user.id),
+  });
 
-    if(!newProfile) {
-        error(500, "Failed to create user profile");
-    }
+  if (curProfile) {
+    return curProfile;
+  }
 
-    return newProfile;
+  await db.insert(profileTable).values({
+    id: user.id,
+    firstName: "",
+    lastName: "",
+    email: user.email ?? "",
+    username: "",
+    quote: "",
+    locations: [],
+    experiences: [],
+    phone: "",
+    coordinates: "",
+  });
 
-}
+  const newProfile = await db.query.profileTable.findFirst({
+    where: eq(profileTable.id, user.id),
+  });
+
+  if (!newProfile) {
+    throw error(500, "Failed to create user profile");
+  }
+
+  return newProfile;
+};
+
+export const getUserProfileByUsername = async (username: string) => {
+  const profile = await db.query.profileTable.findFirst({
+    where: eq(profileTable.username, username),
+  });
+
+  if (!profile) {
+    throw error(404, "User profile not found");
+  }
+
+  return profile;
+};

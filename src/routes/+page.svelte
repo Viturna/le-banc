@@ -1,65 +1,64 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
-	import { formData } from 'zod-form-data';
+	import Button from '$lib/components/Button.svelte';
 
-      const { data } = $props();
-      const { userProfile } = data;
+	export let data: {
+		userProfile?: {
+			firstName: string;
+			lastName: string;
+			email: string;
+			username: string;
+			quote: string;
+			domains: string[];
+			roles: string[];
+			locations: string[];
+			experiences: string[];
+			phone: string;
+			coordinates: string;
+		};
+		domains: { id: number; name: string }[];
+		roles: { id: number; name: string }[];
+	};
 
-      $inspect(data.user);``
-
-      let firstName = $state("")
-      let lastName = $state("")
-      let email = $state("")
-
-      $effect(() => {
-            if (userProfile) {
-                  firstName = userProfile.firstName;
-                  lastName = userProfile.lastName;
-                  email = userProfile.email;
-            }        
-      })
+	const { userProfile } = data;
 </script>
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
 
-{#if userProfile}
-  <p>Welcome</p>
-  <a href="/auth/logout">Logout</a>
-
-  <form method="POST" use:enhance={({formData}) => {
-      formData.set('firstName', firstName);
-      formData.set('lastName', lastName);
-      formData.set('email', email);
-      return ({result}) => {
-            if (result.type === 'success') {
-                  console.log('Form submitted successfully');
-            } else {
-                  console.error('Form submission failed');
-            }
-      }
-}}>
-      <div>
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email" bind:value={email} />
-      </div>
-      <div>
-            <label for="firstname">Prénom</label>
-            <input type="text" name="firstname" id="firstname" bind:value={firstName}/>
-      </div>
-      <div>
-            <label for="lastname">Nom</label>
-            <input type="text" name="lastname" id="lastname" bind:value={lastName}/>
-      </div>
-      <button type="submit">Update</button>
-  </form>
-{:else}
-  <p>You are not logged in</p>
-  <a href="/auth/login">Login</a>
-{/if}
-
+<section class="hero">
+	<div class="container">
+		<div class="hero-content">
+			<h1>
+				une idée.<br />
+				<span class="opacity-60">une équipe.</span><br />
+				<span class="opacity-30">un projet.</span>
+			</h1>
+			<p>bienvenue sur <span class="bold italic">le banc</span>, une plateforme utile.</p>
+			{#if userProfile}
+				<p>Vous êtes connecté</p>
+				<Button color="red" href="/auth/logout">me déconnecter</Button>
+			{:else}
+				<p>You are not logged in</p>
+				<Button color="red" href="/auth/register">m'inscrire</Button>
+				<Button color="blue" href="/auth/login">me connecter</Button>
+			{/if}
+		</div>
+		<div class="hero-image">
+			<img src="/images/hero-image.png" alt="Illustration" />
+		</div>
+	</div>
+</section>
 
 <style>
-      div{
-      background-color: aquamarine;
-      }
+	.hero {
+		min-height: 600px;
+	}
+	.hero .container {
+		display: flex;
+		align-items: end;
+		justify-content: space-between;
+	}
+	.hero-image {
+		align-self: center;
+	}
+	.hero-image img {
+		height: 550px;
+	}
 </style>
