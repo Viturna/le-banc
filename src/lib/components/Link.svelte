@@ -1,13 +1,12 @@
 <script lang="ts">
 	export let color: 'blue' | 'red' | 'black' = 'blue';
+	export let href: string = '#';
 	export let variant: 'border' | 'fill' = 'border';
-	export let type: 'button' | 'submit' | 'reset' = 'button';
-	export let formaction: string | undefined = undefined;
 </script>
 
-<button {type} {formaction} class="button {color} {variant}">
+<a {href} class="button {color} {variant}">
 	<slot>Click me!</slot>
-</button>
+</a>
 
 <style>
 	.button {

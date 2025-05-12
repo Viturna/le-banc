@@ -1,11 +1,11 @@
 <script lang="ts">
-	import Button from '$lib/components/Button.svelte';
+	import Link from '$lib/components/Link.svelte';
 	export let data;
 </script>
 
 <h1>Tous les projets</h1>
 
-<Button color="blue" href="/projects/new">ajouter un projet →</Button>
+<Link color="blue" href="/projects/new">ajouter un projet →</Link>
 {#if data.projects.length === 0}
 	<p>Aucun projet pour le moment.</p>
 {:else}

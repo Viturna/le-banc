@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Button from '$lib/components/Button.svelte';
+	import Link from '$lib/components/Link.svelte';
 
 	export let data: {
 		userProfile?: {
@@ -33,11 +33,11 @@
 			<p>bienvenue sur <span class="bold italic">le banc</span>, une plateforme utile.</p>
 			{#if userProfile}
 				<p>Vous êtes connecté</p>
-				<Button color="red" href="/auth/logout">me déconnecter</Button>
+				<Link color="red" href="/auth/logout">me déconnecter</Link>
 			{:else}
 				<p>You are not logged in</p>
-				<Button color="red" href="/auth/register">m'inscrire</Button>
-				<Button color="blue" href="/auth/login">me connecter</Button>
+				<Link color="red" href="/auth/register">m'inscrire</Link>
+				<Link color="blue" href="/auth/login">me connecter</Link>
 			{/if}
 		</div>
 		<div class="hero-image">

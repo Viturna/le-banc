@@ -1,5 +1,7 @@
 <script>
 	import Input from '$lib/components/Input.svelte';
+	import Button from '$lib/components/Button.svelte';
+	import Link from '$lib/components/Link.svelte';
 </script>
 
 <section class="hero">
@@ -17,11 +19,18 @@
 					required
 				/>
 
-				<button formaction="?/signup">m'inscrire</button>
+				<Button type="submit" formaction="?/signup" variant="fill">m'inscrire</Button>
 			</form>
-			<a href="/auth/register/github">S'inscrire avec github</a>
-			<a href="/auth/register/google">S'inscrire avec google</a>
-			<a href="/auth/login">Se connecter</a>
+			<div class="flex-extauth">
+				<Link href="/auth/register/google" variant="border" color="red"
+					>m'inscrire avec Google →</Link
+				>
+				<Link href="/auth/register/github" variant="border" color="black"
+					>m'inscrire avec Github →</Link
+				>
+			</div>
+			<p>Vous avez déjà un compte ?</p>
+			<Link href="/auth/login" variant="border" color="blue">me connecter</Link>
 		</div>
 		<div class="hero-image">
 			<img src="/images/hero-image.png" alt="Illustration" />
@@ -47,7 +56,7 @@
 	.hero-content form {
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
+		gap: 16px;
 		margin-top: 70px;
 	}
 	.hero-image {
@@ -55,5 +64,12 @@
 	}
 	.hero-image img {
 		height: 550px;
+	}
+	.flex-extauth {
+		width: 100%;
+		margin-top: 64px;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
 	}
 </style>

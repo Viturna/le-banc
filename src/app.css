@@ -162,8 +162,10 @@ table {
 /* Déclarations des variables */
 :root {
     --primary-color: #002FDB;
+    --dark-primary-color: #001975;
     --secondary-color: #FCFCFC;
     --accent-color: #DB0000;
+    --black-color: #171517;
     --font-family: 'Space Mono', monospace;
 }
 
@@ -184,7 +186,7 @@ body {
 h1 {
     font-size: 3rem;
     line-height: 72%;
-    letter-spacing: 14px;
+    letter-spacing: 10px;
     font-weight: 700;
 }
 
