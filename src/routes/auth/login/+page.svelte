@@ -1,19 +1,46 @@
+<script>
+	import Input from '$lib/components/Input.svelte';
+	import Button from '$lib/components/Button.svelte';
+	import Link from '$lib/components/Link.svelte';
+</script>
+
+<svelte:head>
+	<title>Le Banc – Me connecter à la plateforme</title>
+	<meta name="description" content="Plateforme collaborative pour créateurs de projets" />
+	<meta property="og:title" content="Le Banc – Me connecter à la plateforme" />
+	<meta property="og:description" content="Plateforme collaborative pour créateurs de projets" />
+	<meta property="og:type" content="website" />
+</svelte:head>
 <section class="hero">
 	<div class="container">
 		<div class="hero-content">
-			<h1>Se connecter</h1>
-			<p>bienvenue sur <span class="bold italic">le banc</span>, une plateforme utile.</p>
+			<h1>Me connecter</h1>
 			<form method="POST" action="?/login">
-				<label>
-					Email
-					<input name="email" type="email" />
-				</label>
-				<label>
-					Password
-					<input name="password" type="password" />
-				</label>
-				<button>Se connecter</button>
+				<Input name="email" label="Email" type="email" placeholder="Adresse email" required />
+
+				<Input
+					name="password"
+					label="Mot de passe"
+					type="password"
+					placeholder="Mot de passe"
+					required
+				/>
+
+				<Button type="submit" variant="fill">me connecter</Button>
 			</form>
+			<div class="flex-extauth">
+				<Link href="/auth/register/google" variant="border" color="red"
+					>m'inscrire avec Google →</Link
+				>
+				<Link href="/auth/register/github" variant="border" color="black"
+					>m'inscrire avec Github →</Link
+				>
+			</div>
+
+			<div class="container-connexion">
+				<p>Vous n’avez pas de compte ?</p>
+				<Link href="/auth/register" variant="border" color="blue">m'inscrire</Link>
+			</div>
 		</div>
 		<div class="hero-image">
 			<img src="/images/hero-image.png" alt="Illustration" />
@@ -31,16 +58,37 @@
 	}
 	.hero-content {
 		margin-top: 124px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 	.hero-content form {
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
+		gap: 16px;
+		margin-top: 70px;
 	}
 	.hero-image {
 		align-self: center;
 	}
 	.hero-image img {
 		height: 550px;
+	}
+	.flex-extauth {
+		width: 100%;
+		margin-top: 64px;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+	.container-connexion {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		width: 100%;
+		margin-top: 96px;
 	}
 </style>

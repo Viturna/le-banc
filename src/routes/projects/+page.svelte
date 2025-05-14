@@ -3,38 +3,48 @@
 	export let data;
 </script>
 
-<h1>Tous les projets</h1>
+<svelte:head>
+	<title>Le Banc – Trouve un projet</title>
+	<meta name="description" content="Plateforme collaborative pour créateurs de projets" />
+	<meta property="og:title" content="Le Banc – Trouve un projet" />
+	<meta property="og:description" content="Plateforme collaborative pour créateurs de projets" />
+	<meta property="og:type" content="website" />
+</svelte:head>
 
-<Link color="blue" href="/projects/new">ajouter un projet →</Link>
-{#if data.projects.length === 0}
-	<p>Aucun projet pour le moment.</p>
-{:else}
-	<div class="grid">
-		{#each data.projects as project}
-			<div class="card">
-				<h2>{project.title}</h2>
-				<p>{project.description}</p>
+<section class="projects">
+	<h1>Tous les projets</h1>
 
-				{#if project.link}
-					<a class="link" href={project.link} target="_blank">🔗 Voir le lien</a>
-				{/if}
+	<Link color="blue" href="/projects/new">ajouter un projet →</Link>
+	{#if data.projects.length === 0}
+		<p>Aucun projet pour le moment.</p>
+	{:else}
+		<div class="grid">
+			{#each data.projects as project}
+				<div class="card">
+					<h2>{project.title}</h2>
+					<p>{project.description}</p>
 
-				{#if project.images && project.images.length > 0}
-					<div>
-						<h3>Images :</h3>
-						<div class="project-images">
-							{#each project.images as image}
-								<img src={image} alt={project.title} class="project-image" />
-							{/each}
+					{#if project.link}
+						<a class="link" href={project.link} target="_blank">🔗 Voir le lien</a>
+					{/if}
+
+					{#if project.images && project.images.length > 0}
+						<div>
+							<h3>Images :</h3>
+							<div class="project-images">
+								{#each project.images as image}
+									<img src={image} alt={project.title} class="project-image" />
+								{/each}
+							</div>
 						</div>
-					</div>
-				{/if}
+					{/if}
 
-				<a href={`/projects/${project.id}`}> Voir le projet</a>
-			</div>
-		{/each}
-	</div>
-{/if}
+					<a href={`/projects/${project.id}`}> Voir le projet</a>
+				</div>
+			{/each}
+		</div>
+	{/if}
+</section>
 
 <style>
 	.grid {

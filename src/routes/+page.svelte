@@ -22,6 +22,14 @@
 	const { userProfile } = data;
 </script>
 
+<svelte:head>
+	<title>Le Banc – Trouve ton équipe</title>
+	<meta name="description" content="Plateforme collaborative pour créateurs de projets" />
+	<meta property="og:title" content="Le Banc – Trouve ton équipe" />
+	<meta property="og:description" content="Plateforme collaborative pour créateurs de projets" />
+	<meta property="og:type" content="website" />
+</svelte:head>
+
 <section class="hero">
 	<div class="container">
 		<div class="hero-content">

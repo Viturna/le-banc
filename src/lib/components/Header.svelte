@@ -16,7 +16,7 @@
 				>
 			</li>
 			<li>
-				<a href="/projects" class="nav-link {currentPath.startsWith('/projects') ? 'active' : ''}"
+				<a href="#" class="nav-link disabled {currentPath.startsWith('/projects') ? 'active' : ''}"
 					>les projets</a
 				>
 			</li>
@@ -73,5 +73,11 @@
 	}
 	.nav-link:hover {
 		text-decoration: underline;
+	}
+	.nav-link.disabled {
+		cursor: not-allowed;
+		opacity: 0.5;
+		pointer-events: none;
+		text-decoration: none;
 	}
 </style>

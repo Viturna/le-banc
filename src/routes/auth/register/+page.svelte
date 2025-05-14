@@ -4,6 +4,14 @@
 	import Link from '$lib/components/Link.svelte';
 </script>
 
+<svelte:head>
+	<title>Le Banc – M'inscrire à la plateforme</title>
+	<meta name="description" content="Plateforme collaborative pour créateurs de projets" />
+	<meta property="og:title" content="Le Banc – M'inscrire à la plateforme" />
+	<meta property="og:description" content="Plateforme collaborative pour créateurs de projets" />
+	<meta property="og:type" content="website" />
+</svelte:head>
+
 <section class="hero">
 	<div class="container">
 		<div class="hero-content">
@@ -29,8 +37,11 @@
 					>m'inscrire avec Github →</Link
 				>
 			</div>
-			<p>Vous avez déjà un compte ?</p>
-			<Link href="/auth/login" variant="border" color="blue">me connecter</Link>
+
+			<div class="container-connexion">
+				<p>Vous avez déjà un compte ?</p>
+				<Link href="/auth/login" variant="border" color="blue">me connecter</Link>
+			</div>
 		</div>
 		<div class="hero-image">
 			<img src="/images/hero-image.png" alt="Illustration" />
@@ -71,5 +82,14 @@
 		display: flex;
 		flex-direction: column;
 		gap: 8px;
+	}
+	.container-connexion {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		width: 100%;
+		margin-top: 96px;
 	}
 </style>

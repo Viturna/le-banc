@@ -19,7 +19,7 @@
 				<li><a href="/modele-economique" class="nav-link">Notre modèle économique</a></li>
 				<li><a href="/valeurs" class="nav-link">Nos valeurs</a></li>
 				<li>
-					<a href="/" class="nav-link"
+					<a href="https://www.instagram.com/lebancsurinsta/" target="_blank" class="nav-link"
 						>Instagram <svg
 							width="18"
 							height="18"
