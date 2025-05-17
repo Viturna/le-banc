@@ -26,7 +26,7 @@
 		</ul>
 	</nav>
 	<a href="/auth/register" class="nav-link {currentPath === '/auth/register' ? 'active' : ''}"
-		>S'inscrire</a
+		>connexion/inscription</a
 	>
 </header>
 

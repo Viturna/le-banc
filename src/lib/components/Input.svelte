@@ -25,6 +25,7 @@
 
 	.input {
 		width: 30vw;
+		border-radius: 8px;
 		padding: 8px 12px;
 		border: 1px solid var(--primary-color);
 		color: var(--primary-color);

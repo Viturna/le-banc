@@ -164,7 +164,7 @@ table {
     --primary-color: #002FDB;
     --dark-primary-color: #001975;
     --secondary-color: #FCFCFC;
-    --accent-color: #DB0000;
+    --accent-color: #F9353A;
     --black-color: #171517;
     --font-family: 'Space Mono', monospace;
 }
@@ -190,12 +190,22 @@ h1 {
     font-weight: 700;
 }
 
+h2 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
 .bold {
     font-weight: 700;
 }
 
 .italic {
     font-style: italic;
+}
+
+.color-red {
+    color: var(--accent-color);
 }
 
 .opacity-60 {
