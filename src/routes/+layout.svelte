@@ -26,3 +26,7 @@
 		<Footer />
 	</div>
 </div>
+
+<style lang="scss" global>
+	@use '$lib/styles/main.scss' as *;
+</style>
