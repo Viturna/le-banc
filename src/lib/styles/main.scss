@@ -1,4 +1,5 @@
-@use 'base/variables';
-@use 'base/mixins';
-@use 'base/reset';
-@use 'base/typography';
+@use 'base/variables' as *;
+@use 'base/mixins' as *;
+@use 'base/reset' as *;
+@use 'base/typography' as *;
+@use 'base/easings' as *;
