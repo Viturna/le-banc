@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import ToggleButton from '$lib/components/ToggleButton.svelte';
 	$: currentPath = $page.url.pathname;
 
 	let isMenuOpen = false;
@@ -59,6 +60,12 @@
 		</a>
 	</div>
 </header>
+<div class="disable-animations">
+	<span>Désactiver les animations</span>
+	<ToggleButton></ToggleButton>
+</div>
+
+<div class="overlay {isMenuOpen ? 'open' : ''}" on:click={toggleMenu}></div>
 
 <style lang="scss">
 	@use '$lib/styles/base/mixins' as *;
@@ -74,15 +81,19 @@
 			aspect-ratio: 65 / 42;
 			height: 100%;
 			width: auto;
-			transform: scale(1.25) translateX(toRem(-3));
+			transform: scale(1.25) translateX(pxToRem(-3));
+
+			@media screen and (max-width: 1200px) {
+				transform: scale(1.45) translateX(pxToRem(-3));
+			}
 		}
 		h1 {
-			font-size: toRem(20);
+			font-size: pxToRem(20);
 			color: var(--secondary-color);
 			letter-spacing: 0;
 			font-weight: bold;
 			font-style: italic;
-			margin-left: toRem(10);
+			margin-left: pxToRem(10);
 
 			@media screen and (max-width: 1200px) {
 				display: none;
@@ -110,8 +121,8 @@
 		z-index: 100;
 
 		svg {
-			width: toRem(32);
-			height: toRem(32);
+			width: pxToRem(32);
+			height: pxToRem(32);
 			color: var(--secondary-color);
 		}
 
@@ -136,7 +147,7 @@
 			background: var(--primary-color);
 			flex-direction: column;
 			justify-content: center;
-			gap: toRem(32);
+			gap: pxToRem(32);
 			transform: translateX(100%);
 			transition: transform 0.3s ease;
 			z-index: 90;
@@ -156,7 +167,7 @@
 		@media (max-width: 992px) {
 			flex-direction: column;
 			align-items: center;
-			gap: toRem(24);
+			gap: pxToRem(24);
 		}
 	}
 
@@ -173,7 +184,7 @@
 			color 0.2s var(--easeInOutCubic);
 
 		@media (max-width: 992px) {
-			font-size: toRem(18);
+			font-size: pxToRem(18);
 			padding: 8px 16px;
 		}
 
@@ -196,7 +207,18 @@
 
 	.auth-link {
 		@media (max-width: 992px) {
-			margin-top: toRem(16);
+			margin-top: pxToRem(16);
 		}
+	}
+	.disable-animations {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		gap: pxToRem(6);
+		padding: pxToRem(6) pxToRem(12);
+		margin-top: pxToRem(6);
+		text-transform: lowercase;
+		font-size: pxToRem(12);
 	}
 </style>
