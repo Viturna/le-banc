@@ -48,9 +48,9 @@
 				<Link color="blue" href="/auth/login">me connecter</Link>
 			{/if}
 		</div>
-		<div class="hero-image">
+		<!-- <div class="hero-image">
 			<img src="/images/hero-image.png" alt="Illustration" />
-		</div>
+		</div> -->
 	</div>
 </section>
 <section class="about-us">

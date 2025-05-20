@@ -1,93 +1,119 @@
 <footer>
-	<div class="first-container-footer">
-		<p class="copyright">
-			<span class="bold">©le banc</span> - Tous droits à nous
-		</p>
+	<div class="legals">
+		<span class="credit"
+			><span class="copy">© </span><span class="title">le banc</span>&nbsp;- Tous droits réservés
+		</span>
 		<span>|</span>
-		<nav>
-			<ul>
-				<li><a href="/mentions-legales" class="nav-link">Mentions légales</a></li>
-				<li><a href="/plan" class="nav-link">Plan du site</a></li>
-				<li><a href="/cgu" class="nav-link">CGU</a></li>
-			</ul>
-		</nav>
+		<ul>
+			<li>
+				<a href="/mentions-legales" class="legal-link">Mentions légales</a>
+			</li>
+			<li>
+				<a href="/plan-du-site" class="legal-link">Plan du site</a>
+			</li>
+			<li>
+				<a href="/conditions-generales" class="legal-link">CGU</a>
+			</li>
+		</ul>
 	</div>
-	<div class="last-container-footer">
-		<nav>
-			<ul>
-				<li><a href="/equipe" class="nav-link">L’équipe</a></li>
-				<li><a href="/modele-economique" class="nav-link">Notre modèle économique</a></li>
-				<li><a href="/valeurs" class="nav-link">Nos valeurs</a></li>
-				<li>
-					<a href="https://www.instagram.com/lebancsurinsta/" target="_blank" class="nav-link"
-						>Instagram <svg
-							width="18"
-							height="18"
-							viewBox="0 0 18 18"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								d="M9.89252 6.51602C10.3799 6.74871 10.8043 7.09497 11.1301 7.5257C11.4559 7.95643 11.6736 8.45906 11.7648 8.99136C11.8561 9.52366 11.8183 10.0701 11.6546 10.5848C11.4909 11.0994 11.206 11.5673 10.824 11.949L7.44902 15.324C6.81608 15.957 5.95763 16.3125 5.06252 16.3125C4.16741 16.3125 3.30896 15.957 2.67602 15.324C2.04308 14.6911 1.6875 13.8326 1.6875 12.9375C1.6875 12.0424 2.04308 11.184 2.67602 10.551L3.99377 9.23327M14.0063 8.76677L15.324 7.44902C15.957 6.81608 16.3125 5.95763 16.3125 5.06252C16.3125 4.16741 15.957 3.30896 15.324 2.67602C14.6911 2.04308 13.8326 1.6875 12.9375 1.6875C12.0424 1.6875 11.184 2.04308 10.551 2.67602L7.17602 6.05102C6.794 6.43277 6.50917 6.90063 6.34546 7.41529C6.18175 7.92995 6.14393 8.47638 6.2352 9.00868C6.32646 9.54098 6.54414 10.0436 6.86994 10.4743C7.19574 10.9051 7.62015 11.2513 8.10752 11.484"
-								stroke="white"
-								stroke-width="1.125"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-						</svg>
-					</a>
-				</li>
-			</ul>
-		</nav>
+	<div class="links">
+		<ul>
+			<li>
+				<a href="/">L'équipe</a>
+			</li>
+			<li>
+				<a href="/">Notre modèle économique</a>
+			</li>
+			<li>
+				<a href="/">Nos valeurs</a>
+			</li>
+			<li>
+				<a href="https://www.instagram.com/le_banc_/" target="_blank" rel="noopener noreferrer">
+					Instagram
+				</a>
+			</li>
+		</ul>
 	</div>
 </footer>
 
-<style>
+<style lang="scss" scoped>
 	footer {
 		background-color: var(--primary-color);
-		color: white;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		border-radius: 35px;
-		padding: 0 16px;
-		height: 40px;
-	}
-	footer p {
-		font-size: 16px;
-	}
-	.first-container-footer {
-		display: inline-flex;
-		align-items: center;
-		gap: 12px;
-	}
-
-	nav {
-		display: flex;
-		justify-content: space-between;
-	}
-
-	nav ul {
-		list-style-type: none;
-		display: flex;
-	}
-
-	.first-container-footer nav ul {
-		gap: 12px;
-	}
-	.last-container-footer nav ul {
-		gap: 32px;
-	}
-	.nav-link {
-		display: inline-flex;
-		align-items: center;
-		gap: 8px;
 		color: var(--secondary-color);
-		font-size: 16px;
-		text-decoration: underline;
+		padding: pxToRem(6) 0;
+		border-radius: 1000px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		text-transform: lowercase;
+
+		@media screen and (max-width: 992px) {
+			flex-direction: column;
+			gap: pxToRem(16);
+			border-radius: 0;
+		}
+
+		::selection {
+			background-color: var(--red) !important;
+			color: var(--secondary-color);
+		}
+
+		.legals,
+		.links {
+			display: flex;
+			align-items: center;
+			margin: 0 auto;
+			gap: pxToRem(10);
+			padding: pxToRem(6) pxToRem(24);
+			flex-wrap: wrap;
+
+			ul {
+				display: flex;
+				gap: pxToRem(20);
+				list-style-type: none;
+				padding: 0;
+				flex-wrap: wrap;
+
+				li {
+					a {
+						color: var(--secondary-color);
+						text-decoration: underline;
+						text-decoration-thickness: 1px;
+						text-underline-offset: 8%;
+						font-size: pxToRem(14);
+						transition: color 0.3s ease;
+
+						&:hover {
+							color: var(--red);
+						}
+					}
+				}
+			}
+		}
+	}
+	.legals {
+		.credit {
+			display: flex;
+			align-items: center;
+			.copy {
+				align-self: center;
+				font-size: pxToRem(20);
+				transform: translateY(pxToRem(4));
+			}
+			.title {
+				font-weight: bold;
+				font-style: italic;
+			}
+		}
+	}
+	footer .container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 	}
 
-	.nav-link:hover {
-		opacity: 0.6;
+	footer .container p {
+		font-size: 1.5rem;
 	}
 </style>
