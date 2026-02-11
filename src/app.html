@@ -8,7 +8,21 @@
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
 		<script>
-			console.log("test")
+			const benches = [
+				"https://maps.app.goo.gl/Xmv9zQTABPwkTmVF6",
+				"https://maps.app.goo.gl/vEviLftKAJNmpB9z5",
+				"https://maps.app.goo.gl/SuYBAjkg8DucQvCK7",
+				"https://maps.app.goo.gl/NJnCVjpJjiecBsnF8",
+				"https://maps.app.goo.gl/irqiTNSRna7mSdpE6",
+				"https://maps.app.goo.gl/Ab5WQxryANupv3ru8",
+				"https://maps.app.goo.gl/3LyQJJo3jN4S4wQH6",
+				"https://maps.app.goo.gl/8LuRimeoSqp7P9x18",
+				"https://maps.app.goo.gl/MF4gWgt1fDeJujKn6",
+				"https://maps.app.goo.gl/ApfP7qMf7stdxcXV8",
+			]
+
+			const randomBench = benches[Math.floor(Math.random() * benches.length)]
+			window.location.replace(randomBench)
 		</script>
 	</body>
 </html>
