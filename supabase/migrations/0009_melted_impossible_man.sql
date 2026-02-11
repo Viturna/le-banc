@@ -1,1 +1,0 @@
-ALTER TABLE "profile" ADD COLUMN "photo_url" text DEFAULT '';
