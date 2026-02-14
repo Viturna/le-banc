@@ -8,21 +8,803 @@
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
 		<script>
-			const benches = [
-				"https://maps.app.goo.gl/Xmv9zQTABPwkTmVF6",
-				"https://maps.app.goo.gl/vEviLftKAJNmpB9z5",
-				"https://maps.app.goo.gl/SuYBAjkg8DucQvCK7",
-				"https://maps.app.goo.gl/NJnCVjpJjiecBsnF8",
-				"https://maps.app.goo.gl/irqiTNSRna7mSdpE6",
-				"https://maps.app.goo.gl/Ab5WQxryANupv3ru8",
-				"https://maps.app.goo.gl/3LyQJJo3jN4S4wQH6",
-				"https://maps.app.goo.gl/8LuRimeoSqp7P9x18",
-				"https://maps.app.goo.gl/MF4gWgt1fDeJujKn6",
-				"https://maps.app.goo.gl/ApfP7qMf7stdxcXV8",
-			]
+			data = [
+    {
+        "image": "http://gallery3.cleo-carto.org/index.php/Fretin/IMG_20110505_183322"
+    },
+    {
+        "image": "https://web.archive.org/web/20230516145634/https://westnordost.de/p/147186.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/9/9/lth/2997514_f6e51_5f58b17c5c6cb.jpg"
+    },
+    {
+        "image": "http://www.les-bancs-de-la-liberte.com/images/bancs/170716160145.jpg"
+    },
+    {
+        "image": "http://www.les-bancs-de-la-liberte.com/images/bancs/170716160145.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/9/1/lth/2973262_fb30e_5f4ed95fc71b3.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/9/9/lth/2997046_a41cf_5f588bd8d9636.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image112_M.jpg"
+    },
+    {
+        "image": "http://storage9.openstreetcam.org/files/photo/2018/11/24/lth/1309033_1_f0868_27.jpg"
+    },
+    {
+        "image": "https://photos.app.goo.gl/Q4yFpCydrWAD1ZKz8"
+    },
+    {
+        "image": "https://photos.app.goo.gl/Q4yFpCydrWAD1ZKz8"
+    },
+    {
+        "image": "http://www.les-bancs-de-la-liberte.com/images/bancs/130208150054.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2764290_cb9b0_5f0fde64c7cb5.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/15/lth/2761826_f4df3_5f0f40f86fb8b.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/14/lth/2755626_605d1_5f0d3c53cc3f6.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/17/lth/2769162_d6919_5f11a277d87ce.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/14/lth/2758454_b2e7a_5f0e16816248d.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2766022_f29a4_5f10651444b78.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/9/6/lth/2988158_e87c9_5f54f0270b3ff.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/17/lth/2769062_d3c77_5f1198667f7cc.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2763362_7abaf_5f0f9ed9c4544.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2764054_4a764_5f0fc324b7421.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2765458_c1c41_5f1035e0a82ba.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2765218_2ea8b_5f10322085f65.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/17/lth/2769162_76948_5f11e797f1323.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/14/lth/2758050_b16e9_5f0dfd2aadcce.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2765458_b5817_5f103557e2ba3.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/17/lth/2769834_5613f_5f11d9315b9e1.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2765670_664eb_5f10404c8d874.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/9/6/lth/2988150_dfdb7_5f54f42097f21.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/17/lth/2769834_72ccd_5f11d9c7260d7.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2767934_1b97a_5f10ef1c1b90e.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/15/lth/2761694_9e1b9_5f0f2d299a736.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/15/lth/2761526_be97e_5f0f293306131.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2764054_4a764_5f0fc324b7421.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2764290_f82a4_5f0fd81d7cf32.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/17/lth/2769834_18ba1_5f11d97edc9e1.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/14/lth/2758078_33a60_5f0e032cb1bb0.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/14/lth/2758610_57f63_5f0e23544fc46.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2766806_62b1d_5f108d9a1e6d4.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2764290_baef1_5f0fe61701a44.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2763362_17b16_5f0f9ed7b6dfe.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2765830_7e67a_5f104df67b39b.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2766022_8a2b5_5f1061f871141.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/18/lth/2771566_3c70b_5f128530e9d22.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2767878_40f85_5f10e9a96d9c2.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/17/lth/2769990_67b85_5f11ec181b160.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/17/lth/2767982_773ab_5f10f8b3990aa.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/14/lth/2755282_e87d8_5f0d1b6f2526e.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/15/lth/2759734_1a325_5f0e76f8cc421.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/14/lth/2757786_b6203_5f0dfe5e49609.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2763718_ac00f_5f0fb1dcae01f.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2763718_ac00f_5f0fb1dcae01f.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/17/lth/2770134_673fb_5f11f6c3ed7a4.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2766806_62b1d_5f108d9a1e6d4.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/17/lth/2768278_320d4_5f1136fee206b.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/18/lth/2772474_43b51_5f12d55f1a0b6.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/17/lth/2769834_bfb05_5f11d9c137d3a.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2765634_70530_5f104a8ae7cec.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2765634_70530_5f104a8ae7cec.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2765634_70530_5f104a8ae7cec.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2765830_17ac7_5f104df238906.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/17/lth/2769378_d1c9e_5f11b8ac8f4c2.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2767650_429f9_5f10c9c1cf2ad.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/17/lth/2767982_d3cff_5f10f3e240962.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/17/lth/2769954_82739_5f11ea4faecd7.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/18/lth/2771566_37b44_5f12814db8727.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2766278_da2d0_5f106e8b48ece.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/14/lth/2755390_b0f34_5f0d2d0f65b60.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2766806_7975d_5f10ae2424226.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/9/6/lth/2988142_b1266_5f5502f262009.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/17/lth/2768326_ddff6_5f1123d5972fc.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/17/lth/2768038_68236_5f10fd882b7f3.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/17/lth/2769378_bbad8_5f11bbabdf1c8.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/18/lth/2772474_ec1f7_5f12d3f450eb4.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2765458_fbff7_5f103afe16299.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/17/lth/2769954_ad366_5f11ea4bb0d80.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2766826_c72b2_5f1095d809af0.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/8/5/lth/2865398_82b33_5f2a1c0791a10.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/16/lth/2766806_50b23_5f10adaa417c6.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/9/14/lth/3017150_ad631_5f5eed3c8e113.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/14/lth/2755390_467d4_5f0d2c589beb1.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/9/14/lth/3016466_3d94a_5f5ec9618103f.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/8/11/lth/2902366_d739a_5f332ee352dcf.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/8/11/lth/2902366_600b8_5f332f9e86aab.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/7/18/lth/2771770_744cb_5f129e0d5e69d.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/9/14/lth/3016466_74cbb_5f5eca2a78da6.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/9/6/lth/2988158_34ec4_5f54efb04ef32.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/9/14/lth/3017106_4e4db_5f5ef427b2bc0.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/8/11/lth/2902366_f92de_5f332f810e16e.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/8/11/lth/2902366_a88aa_5f332f79e5151.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/8/11/lth/2902366_19862_5f332f7d8d3b0.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/9/14/lth/3016466_4d400_5f5ec6c4e7a04.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/8/11/lth/2902366_95292_5f332f033f2a2.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/9/14/lth/3017150_22f4c_5f5ee4687026b.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/9/9/lth/2997514_02a7a_5f58b3e0678dc.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/9/14/lth/3017106_818c5_5f5eef1570e4a.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/8/11/lth/2902366_586b7_5f332f84d19b2.jpg"
+    },
+    {
+        "image": "https://storage13.openstreetcam.org/files/photo/2020/9/14/lth/3017442_82f9b_5f5efc09347b8.jpg"
+    },
+    {
+        "image": "https://upload.wikimedia.org/wikipedia/commons/2/25/Banc_en_pierres_s%C3%A8ches.jpg"
+    },
+    {
+        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Payzac-_%C3%A9glise.jpg"
+    },
+    {
+        "image": "https://web.archive.org/web/20210407133606/https://westnordost.de/p/34909.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley1.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley3.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley4.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley5.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley6.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210419_125753355.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley9.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley11.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley12.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley13.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley16.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley14.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley18.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley17.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley19.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley31.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley27.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley28.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley29.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley30.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley57.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley23.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley24.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley22.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley21.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley25.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley26.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_110555663.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_110525792.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_111314221.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_110956567.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210419_141209102.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210419_141310144.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210419_141039822.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210419_141128318.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imagesaley34.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210419_140951752.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_111451567.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_111356794.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_111852399.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_111525813.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_105931035.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_110013985.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_110047438.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_110355363.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_105749882.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_105620390.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_105547592.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_105507448.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_105848955.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_105349325.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_105429966.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_105314156.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_105240586.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Imag64.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_105133909.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_105008421.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_104928414.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_105055871.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_104838132.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_112251480.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_111942786.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_113035420.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_112850066.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_113422128.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_113120179.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_113236892.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_112401640.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_112500166.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_112546985.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_112733142.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210419_141936272.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210419_141756065.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210419_142045562.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210419_142223774.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210419_142541859.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210419_142632766.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210419_142724326.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210419_143034531.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image54_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image104_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image102_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image109_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image110_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image111_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image114_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image113_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image130_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image129_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image131_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image132_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image134_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image140_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image139_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image138_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image135_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image136_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image137_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image141_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image143_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image142_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image144_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image144_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image146_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image147_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image148_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image149_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image150_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image154_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image152_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image153_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image151_M.jpg"
+    },
+    {
+        "image": "https://www.bing.com/maps?osid=6bee5a0f-c5a1-480e-bc8b-5bf9501151a1&cp=47.590643~1.335309&lvl=19&dir=121.18484&pi=-0.761376&style=x&mo=z.0&v=2&sV=2&form=S00027"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Project_1_20210423_110555663.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image102_M.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Image140_M.jpg"
+    },
+    {
+        "image": "https://openbenches.org/image/ccf1deb8e4fd44a6c25792437793f9dea8b59e74.jpg"
+    },
+    {
+        "image": "https://web.archive.org/web/20220913000222/https://westnordost.de/p/111497.jpg"
+    },
+    {
+        "image": "https://web.archive.org/web/20220913000222/https://westnordost.de/p/111497.jpg"
+    },
+    {
+        "image": "https://web.archive.org/web/20220913000222/https://westnordost.de/p/111497.jpg"
+    },
+    {
+        "image": "https://web.archive.org/web/20220913000222/https://westnordost.de/p/111497.jpg"
+    },
+    {
+        "image": "https://web.archive.org/web/20220913000222/https://westnordost.de/p/111497.jpg"
+    },
+    {
+        "image": "https://web.archive.org/web/20220913000222/https://westnordost.de/p/111497.jpg"
+    },
+    {
+        "image": "https://web.archive.org/web/20221105161059/https://westnordost.de/p/67560.jpg"
+    },
+    {
+        "image": "https://web.archive.org/web/20230104134945/https://westnordost.de/p/125532.jpg"
+    },
+    {
+        "image": "https://web.archive.org/web/20230104134945/https://westnordost.de/p/125532.jpg"
+    },
+    {
+        "image": "https://web.archive.org/web/20230104134945/https://westnordost.de/p/125532.jpg"
+    },
+    {
+        "image": "https://web.archive.org/web/20230104134945/https://westnordost.de/p/125532.jpg"
+    },
+    {
+        "image": "https://web.archive.org/web/20230104134945/https://westnordost.de/p/125532.jpg"
+    },
+    {
+        "image": "https://web.archive.org/web/20230104134945/https://westnordost.de/p/125532.jpg"
+    },
+    {
+        "image": "https://museesansmurs.e-monsite.com/medias/images/114.jpg"
+    },
+    {
+        "image": "https://museesansmurs.e-monsite.com/medias/images/019.jpg"
+    },
+    {
+        "image": "https://www.mapillary.com/app/?pKey=521246480175190"
+    },
+    {
+        "image": "https://images.lindependant.fr/api/v1/images/view/646289ca16879407ca0befba/original/image.jpg"
+    },
+    {
+        "image": "https://www.saintlaurentdelasalanque.fr/wp-content/uploads/2019/07/IMG_1225-e1562316822556.jpg"
+    },
+    {
+        "image": "https://images.lindependant.fr/api/v1/images/view/5bf471133e454657c24757e5/large/image.jpg"
+    },
+    {
+        "image": "http://www.les-bancs-de-la-liberte.com/rszr-400.php?f=images/news/210418190215.jpg"
+    },
+    {
+        "image": "http://www.les-bancs-de-la-liberte.com/images/bancs/170716160312.jpg"
+    },
+    {
+        "image": "http://www.les-bancs-de-la-liberte.com/images/bancs/170716160520.jpg"
+    },
+    {
+        "image": "https://web.archive.org/web/20230516150409/https://westnordost.de/p/147220.jpg"
+    },
+    {
+        "image": "https://web.archive.org/web/20230516182151/https://westnordost.de/p/147232.jpg"
+    },
+    {
+        "image": "https://web.archive.org/web/20230517130401/https://westnordost.de/p/148339.jpg"
+    },
+    {
+        "image": "https://photos.app.goo.gl/2fjQ2ds3DqnBxGvC8"
+    },
+    {
+        "image": "https://scontent.xx.fbcdn.net/v/t1.15752-9/434449751_1112165666655414_1806514081226610987_n.jpg?stp=dst-jpg_s403x403&_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=gB_A3ON7ORsAX9ET6Qu&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTMGR3uge2V67qLODvqsjWc1rBvR"
+    },
+    {
+        "image": "https://photos.app.goo.gl/8C3Ckwe6mv5yYpTKA"
+    },
+    {
+        "image": "https://photos.app.goo.gl/XXWXvgSLkJqzLxX89"
+    },
+    {
+        "image": "https://photos.app.goo.gl/7U1euGTgagXvjj279"
+    },
+    {
+        "image": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Banc_Square_Anatole_France_Cou%C3%ABron.jpg"
+    },
+    {
+        "image": "https://upload.wikimedia.org/wikipedia/commons/0/03/Banc_Square_Anatole_France_Cou%C3%ABron_2.jpg"
+    },
+    {
+        "image": "https://panoramax.openstreetmap.fr/images/06/55/73/08/1513-4172-8c75-7cdcadd375b8.jpg"
+    },
+    {
+        "image": "https://museesansmurs.e-monsite.com/medias/images/017-musee-sans-mur.jpg"
+    },
+    {
+        "image": "https://commons.wikimedia.org/wiki/File:Acc%C3%A8s_Station_M%C3%A9tro_Anatole_France_Place_G%C3%A9n%C3%A9ral_Leclerc_Hauteclocque_-_Levallois-Perret_(FR92)_-_2022-01-30_-_5.jpg"
+    },
+    {
+        "image": "https://panoramax.openstreetmap.fr/images/32/b7/dc/ea/db7d-4bdd-b3aa-4c0af71c49e4.jpg"
+    },
+    {
+        "image": "https://panoramax.openstreetmap.fr/images/32/b7/dc/ea/db7d-4bdd-b3aa-4c0af71c49e4.jpg"
+    },
+    {
+        "image": "https://panoramax.openstreetmap.fr/images/0d/ac/1c/a0/75aa-47d1-8b41-0a53cfddbce7.jpg"
+    },
+    {
+        "image": "https://panoramax.openstreetmap.fr/images/0d/ac/1c/a0/75aa-47d1-8b41-0a53cfddbce7.jpg"
+    },
+    {
+        "image": "https://panoramax.openstreetmap.fr/images/0d/ac/1c/a0/75aa-47d1-8b41-0a53cfddbce7.jpg"
+    },
+    {
+        "image": "https://panoramax.openstreetmap.fr/images/0d/ac/1c/a0/75aa-47d1-8b41-0a53cfddbce7.jpg"
+    },
+    {
+        "image": "https://panoramax.openstreetmap.fr/images/0d/ac/1c/a0/75aa-47d1-8b41-0a53cfddbce7.jpg"
+    },
+    {
+        "image": "https://panoramax.openstreetmap.fr/images/0d/ac/1c/a0/75aa-47d1-8b41-0a53cfddbce7.jpg"
+    },
+    {
+        "image": "https://cdn-s-www.dna.fr/images/F5F8C406-24F7-44B6-9DA9-1B7BC53D7089/NW_raw/la-boite-a-livre-du-jardin-de-la-folie-marco-avec-meme-un-banc-pour-entamer-une-lecture-photo-dna-1623164488.jpg"
+    },
+    {
+        "image": "https://panoramax.openstreetmap.fr/?s=fp;s2;p5f0d82c8-fd89-4bdd-bbb6-77061c6afbd6;c229.56/-16.73/27;m19.43/48.9051896/6.0584509;te;vd;ba"
+    }
+]
+        const randomBench = data[Math.floor(Math.random() * data.length)]
+        window.location.replace(randomBench.image)
 
-			const randomBench = benches[Math.floor(Math.random() * benches.length)]
-			window.location.replace(randomBench)
 		</script>
 	</body>
 </html>
